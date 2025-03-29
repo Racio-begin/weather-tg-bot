@@ -1,0 +1,1 @@
+print('Привет! Это weather-tg-bot. Подробнее в [README.md](https://github.com/ArtemMokhov/weather-tg-bot/blob/main/README.md)')
