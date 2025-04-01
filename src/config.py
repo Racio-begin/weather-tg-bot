@@ -4,4 +4,5 @@ import os
 # Загружаем переменные из файла .env
 load_dotenv()
 
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TG_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+OWM_API_KEY = os.getenv('OPEN_WEATHER_MAP_API_KEY')
