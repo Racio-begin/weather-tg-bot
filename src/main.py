@@ -5,7 +5,7 @@ import logging  # Импортируем модуль logging для веден�
 
 from aiogram import Bot, Dispatcher # Импортируем классы из библиотеки aiogram для создания и управления ботом
 
-from config import TG_BOT_TOKEN, OWM_API_KEY
+from config import TG_BOT_TOKEN
 from app.handlers import router
 
 bot = Bot(token=TG_BOT_TOKEN)
