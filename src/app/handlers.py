@@ -30,5 +30,5 @@ async def weather(message: Message):
                 await message.answer("Ошибка при запросе к API. Проверь ключ или попробуй повторить запрос позже.")
 
 @router.message(F.photo)
-async def photo(message: Message):
+async def get_photo_id(message: Message):
     await message.answer(f'Да, это фото! Его ID: {message.photo[-1].file_id}')
