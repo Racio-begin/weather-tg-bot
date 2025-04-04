@@ -61,6 +61,7 @@ async def send_weather(message: Message, city: str, url: str):  # Выносим
                 weather_description = data['weather'][0]['description'] # описание погоды
                 temperature = data['main']['temp'] # температура
                 feels_like = data['main']['feels_like'] # ощущается как
+                wind = data['wind']['speed'] # скорость ветра
                 humidity = data['main']['humidity'] # влажность
                 pressure = data['main']['pressure'] # давление
 
@@ -86,6 +87,7 @@ async def send_weather(message: Message, city: str, url: str):  # Выносим
                     "\n"
                     f"Описание: {weather_emoji} {weather_description}\n"
                     f"Температура: {round(temperature, 1)}°C (ощущается как {round(feels_like, 1)}°C)\n"
+                    f"Ветер: {round(wind, 1)}м/с\n"
                     f"Влажность: {humidity}%\n"
                     f"Давление: {pressure} мм рт. ст."
                 )
@@ -99,4 +101,4 @@ async def send_weather(message: Message, city: str, url: str):  # Выносим
 
 @router.message(F.photo)
 async def get_photo_id(message: Message):
-    await message.answer(f'Да, это фото! Его ID: {message.photo[-1].file_id}')
+    await message.answer(f'Да, это фото! \n Его ID: {message.photo[-1].file_id}')
