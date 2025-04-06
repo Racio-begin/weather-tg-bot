@@ -91,7 +91,7 @@ async def send_weather(message: Message, city: str, url: str):  # Выносим
                     f"Температура: {round(temperature, 1)}°C (ощущается как {round(feels_like, 1)}°C)\n"
                     f"Ветер: {round(wind, 1)}м/с\n"
                     f"Влажность: {humidity}%\n"
-                    f"Давление: {pressure * 0.75} мм рт. ст."
+                    f"Давление: {round(pressure * 0.75)} мм рт. ст."
                 )
 
                 await message.answer(reply)
