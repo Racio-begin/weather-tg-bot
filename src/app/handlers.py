@@ -56,6 +56,8 @@ async def send_weather(message: Message, city: str, url: str):  # Выносим
         async with session.get(url) as response:
             if response.status == 200:
                 data = await response.json()  # Получаем JSON-ответ
+                
+                print(data) # Тело ответа
 
                 # Извлекаем данные
                 weather_description = data['weather'][0]['description'] # описание погоды
@@ -89,7 +91,7 @@ async def send_weather(message: Message, city: str, url: str):  # Выносим
                     f"Температура: {round(temperature, 1)}°C (ощущается как {round(feels_like, 1)}°C)\n"
                     f"Ветер: {round(wind, 1)}м/с\n"
                     f"Влажность: {humidity}%\n"
-                    f"Давление: {pressure} мм рт. ст."
+                    f"Давление: {pressure * 0.75} мм рт. ст."
                 )
 
                 await message.answer(reply)
